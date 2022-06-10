@@ -1,12 +1,16 @@
 package sorting;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Best used in: 
  * - smaller integers with multiple counts
  * - linear complexity is needed
  * - counting thresholds need to be counted
+ * - counting number of occurrences 
  * 
  * Best, Avg & Worst  O(n+k)
  * Space O(max)
@@ -49,6 +53,10 @@ public class CountSorting {
         for (int i = 0; i < size; i ++) {
             arr[i] = output[i];
         }
+    }
+
+    public static List<Integer> arrayToList(int[] array){
+        return IntStream.of(array).boxed().collect(Collectors.toList());
     }
 
     public static void main(String args[]) {
