@@ -1,16 +1,19 @@
 package encryption;
 
 public class CaeserCipher {
+    private static final int UPPERCASE_A = 64;
+    private static final int LOWERCASE_A = 96;
+    private static final int LETTER_COUNT = 26;
     
     public static int shiftAscii(char ascii, int k) {
         int asciiIdx = (int) ascii;
-        int correctedShift = (k % 26);
+        int correctedShift = (k % LETTER_COUNT);
         if (Character.isUpperCase(ascii)) {
             int overflow = (asciiIdx + correctedShift) - (int)'Z';
-            return overflow > 0  ? 64+ overflow  : asciiIdx + correctedShift;
+            return overflow > 0  ? UPPERCASE_A+ overflow  : asciiIdx + correctedShift;
         } else {
             int overflow = (asciiIdx + correctedShift) - (int)'z';
-            return overflow > 0  ? 96+ overflow  : asciiIdx + correctedShift;
+            return overflow > 0  ? LOWERCASE_A+ overflow  : asciiIdx + correctedShift;
         }
     }
 
