@@ -23,13 +23,33 @@ public class BinarySearch {
         return -1;
     }
 
+    public static int binarysearch(int arr[], int n, int k) {
+        int l = 0;
+        int r = n;
+        
+        int middle = n/2;
+        while ( r - l > 0)  {
+            if (arr[middle] == k) {
+                return middle;
+            }
+            else if (arr[middle] > k){
+                r = middle;
+            } else {
+                l = middle+1;
+            }
+            middle = (r+l)/2;
+        }
+        return -1;
+    }
+
     public static void main(String args[]) {
-        int target = 2;
+        int target = 5;
         int[] nums = {-1,0,3,5,9,12};
         //int target = 5;
         //int[] nums = {5};
         //int target = 5;
         //int[] nums = {-1, 0, 5};
-        System.out.println(BinarySearch.search(nums, target));
+        //System.out.println(BinarySearch.search(nums, target));
+        System.out.println(BinarySearch.binarysearch(nums, nums.length, target));
     }
 }
