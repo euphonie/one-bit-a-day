@@ -27,6 +27,7 @@ public class MinimumBribes {
                     return;
                 } 
           
+                // swap operation 
                if (q.get(i) > q.get(i+1)){
                    temp = q.get(i);
                    q.set(i, q.get(i+1));
