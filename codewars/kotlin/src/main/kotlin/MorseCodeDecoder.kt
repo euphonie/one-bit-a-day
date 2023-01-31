@@ -1,8 +1,8 @@
 package codewars.katas
 
 class MorseCodeDecoder {
-    
-    private val MorseCode : Map<String, Char> = mapOf(
+
+    private val MorseCode: Map<String, Char> = mapOf(
         ".-" to 'a',
         "-..." to 'b',
         "-.-." to 'c',
@@ -40,12 +40,12 @@ class MorseCodeDecoder {
         "----." to '9',
         "-----" to '0'
     )
-    
-    fun decodeMorse(code: String) : String {
-        val breakIntoWords : (String) -> List<String> =
-            {code:String -> code.split("   ")}
-        val translateWord : (String) -> String =
-            {w:String -> w.split(" ").joinToString("") {MorseCode.getOrDefault(it, "").toString()}   }
+
+    fun decodeMorse(code: String): String {
+        val breakIntoWords: (String) -> List<String> =
+            { code: String -> code.split("   ") }
+        val translateWord: (String) -> String =
+            { w: String -> w.split(" ").joinToString("") { MorseCode.getOrDefault(it, "").toString() } }
 
         return breakIntoWords(code.trim())
             .joinToString(" ") {
