@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codewars\\": "src/"
+        }
+    },
+    "scripts": {
+        "test" : "phpunit --bootstrap vendor/autoload.php tests"
+    }
+}
